@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: analytics-basic-deployment
+spec:
+  selector:
+    matchLabels:
+      app: analytics-basic
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: analytics-basic
+    spec:
+      containers:
+        - name: analytics-basic
+          image: tawu04/analytics:latest
+          ports:
+            - containerPort: 8080
+              name: http
+            - containerPort: 10800
+              name: thin-client
+            - containerPort: 11211
+              name: jdbc
+            - containerPort: 47100
+              name: local-com
+            - containerPort: 47500
+              name: local-discovery
+          env:
+            - name: IGNITE_DISCOVERY_MODE
+              value: KUBE

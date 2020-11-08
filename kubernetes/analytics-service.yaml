@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: analytics-basic-service
+spec:
+  type: NodePort
+  selector:
+    app: analytics-basic
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+    - name: thin-client
+      protocol: TCP
+      port: 10800
+      targetPort: 10800
+    - name: jdbc
+      protocol: TCP
+      port: 11211
+      targetPort: 11211
+    - name: local-com
+      protocol: TCP
+      port: 47100
+      targetPort: 47100
+    - name: local-discovery
+      protocol: TCP
+      port: 47500
+      targetPort: 47500
