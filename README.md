@@ -32,8 +32,13 @@ Find NodePort mapping from Kubernetes service, the port mapped from 8080:
 kubectl get service
 
 http://[KUBERNETES_CLUSTER_IP]:[KUBERNETES_NODE_PORT]/hello
+
 http://[KUBERNETES_CLUSTER_IP]:[KUBERNETES_NODE_PORT]/loadCache
+
 http://[KUBERNETES_CLUSTER_IP]:[KUBERNETES_NODE_PORT]/cleanCache
+
 http://[KUBERNETES_CLUSTER_IP]:[KUBERNETES_NODE_PORT]/countTradeByBook
+
 http://[KUBERNETES_CLUSTER_IP]:[KUBERNETES_NODE_PORT]/findTradesByBook
+
 http://[KUBERNETES_CLUSTER_IP]:[KUBERNETES_NODE_PORT]/findTradesById
