@@ -87,6 +87,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>dk.twu.analytics.AnalyticsApplication</mainClass>
+                    <jvmArguments>-Xmx2G</jvmArguments>
+                </configuration>
             </plugin>
         </plugins>
     </build>
